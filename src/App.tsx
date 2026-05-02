@@ -4,6 +4,7 @@ import { Header } from './components/layout/Header';
 import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
 import { Services } from './components/sections/Services';
+import { WhyChooseUs } from './components/sections/WhyChooseUs';
 import { Gallery } from './components/sections/Gallery';
 import { Testimonials } from './components/sections/Testimonials';
 import { Booking } from './components/sections/Booking';
@@ -79,10 +80,13 @@ export default function App() {
     setLoading(true);
     
     try {
+      const selectedService = SERVICES.find(s => s.name === bookingData.service);
+      const payload = { ...bookingData, price: selectedService?.price || 0 };
+
       const response = await fetch('/api/appointments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(bookingData)
+        body: JSON.stringify(payload)
       });
       
       const data = await response.json();
@@ -138,6 +142,8 @@ export default function App() {
           setBookingData({ ...bookingData, service: serviceName });
           scrollToBooking();
         }} />
+
+        <WhyChooseUs />
 
         <Gallery />
 

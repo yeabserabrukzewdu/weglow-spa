@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'motion/react';
-import { Instagram, ArrowRight, Play } from 'lucide-react';
+import { Instagram, ArrowRight, Play, Pause } from 'lucide-react';
 import { GALLERY_ITEMS, SOCIAL_LINKS } from '../../constants';
 
 export const Gallery: React.FC = () => {
+  const [playingId, setPlayingId] = useState<number | null>(null);
+  const videoRefs = useRef<{ [key: number]: HTMLVideoElement | null }>({});
+
+  const togglePlay = (id: number) => {
+    const video = videoRefs.current[id];
+    if (!video) return;
+
+    if (playingId === id) {
+      video.pause();
+      setPlayingId(null);
+    } else {
+      // Pause currently playing video if any
+      if (playingId !== null && videoRefs.current[playingId]) {
+        videoRefs.current[playingId]?.pause();
+      }
+      
+      video.play();
+      setPlayingId(id);
+    }
+  };
+
   return (
-    <section id="gallery" className="py-32 px-8 bg-white">
-      <div className="max-w-6xl mx-auto">
+    <section id="gallery" className="py-32 px-4 md:px-8 bg-white">
+      <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div>
             <motion.h3 
@@ -41,7 +62,7 @@ export const Gallery: React.FC = () => {
           </motion.a>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
           {GALLERY_ITEMS.map((item, i) => (
             <motion.div
               key={item.id}
@@ -49,27 +70,41 @@ export const Gallery: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.8 }}
-              className="aspect-[9/16] bg-[#F5F5F0] rounded-[2rem] overflow-hidden shadow-sm group relative"
+              className="aspect-[9/16] bg-[#F5F5F0] rounded-[2rem] overflow-hidden shadow-sm group relative cursor-pointer"
+              onClick={() => item.videoUrl && togglePlay(item.id)}
             >
               {item.videoUrl ? (
-                <video 
-                  src={item.videoUrl} 
-                  className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105"
-                  autoPlay muted loop playsInline
-                />
+                <div className="w-full h-full relative">
+                  <video 
+                    ref={(el) => (videoRefs.current[item.id] = el)}
+                    src={item.videoUrl} 
+                    className={`w-full h-full object-cover transition-all duration-1000 ${playingId === item.id ? 'opacity-100 scale-105' : 'opacity-70 group-hover:opacity-100'}`}
+                    loop 
+                    muted={false} // User probably wants sound if they play it manually
+                    playsInline
+                    onPlay={() => setPlayingId(item.id)}
+                    onPause={() => playingId === item.id && setPlayingId(null)}
+                  />
+                  
+                  {/* Play/Pause Overlay */}
+                  <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${playingId === item.id ? 'bg-transparent' : 'bg-black/20 group-hover:bg-black/10'}`}>
+                    <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-500 shadow-xl">
+                      {playingId === item.id ? (
+                        <Pause className="w-6 h-6 text-white fill-white" />
+                      ) : (
+                        <Play className="w-6 h-6 text-white fill-white ml-1" />
+                      )}
+                    </div>
+                  </div>
+                </div>
               ) : (
                 <img 
                   src={item.imageUrl} 
                   alt={item.type}
-                  className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105"
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
               )}
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-500">
-                  <Play className="w-6 h-6 text-white fill-white ml-1" />
-                </div>
-              </div>
             </motion.div>
           ))}
         </div>

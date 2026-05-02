@@ -222,15 +222,55 @@ export interface GalleryItem {
 }
 
 export const GALLERY_ITEMS: GalleryItem[] = [
-  { id: 1, type: "interior", imageUrl: "https://picsum.photos/seed/spa-interior-1/720/1280" },
-  { id: 2, type: "treatment", imageUrl: "https://picsum.photos/seed/massage-therapy/720/1280" },
-  { id: 3, type: "detail", imageUrl: "https://picsum.photos/seed/essential-oils/720/1280" },
-  { id: 4, type: "moroccan", imageUrl: "https://picsum.photos/seed/moroccan-hammam/720/1280" },
-  { id: 5, type: "pedicure", imageUrl: "https://picsum.photos/seed/foot-spa/720/1280" },
-  { id: 6, type: "atmosphere", imageUrl: "https://picsum.photos/seed/spa-candles/720/1280" },
-  { id: 7, type: "treatment", imageUrl: "https://picsum.photos/seed/thai-massage/720/1280" },
-  { id: 8, type: "interior", imageUrl: "https://picsum.photos/seed/zen-garden/720/1280" }
-];
+  { 
+    id: 1, 
+    type: "reel", 
+    imageUrl: "https://picsum.photos/seed/spa-interior-1/720/1280",
+    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777712207/Download_5_arjj8t.mp4"
+  },
+   { 
+    id: 2, 
+    type: "reel", 
+    imageUrl: "https://picsum.photos/seed/spa-interior-1/720/1280",
+    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777711380/Download_1_zsyef0.mp4"
+  },
+   { 
+    id: 3, 
+    type: "reel", 
+    imageUrl: "https://picsum.photos/seed/spa-interior-1/720/1280",
+    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777711413/Download_3_r5bfol.mp4"
+  },
+   { 
+    id: 4, 
+    type: "reel", 
+    imageUrl: "https://picsum.photos/seed/spa-interior-1/720/1280",
+    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777711411/Download_7_vbts86.mp4"
+  },
+   { 
+    id: 5, 
+    type: "reel", 
+    imageUrl: "https://picsum.photos/seed/spa-interior-1/720/1280",
+    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777712185/Download_6_dkflb6.mp4"
+  },
+   { 
+    id: 6, 
+    type: "reel", 
+    imageUrl: "https://picsum.photos/seed/spa-interior-1/720/1280",
+    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777711410/Download_ldq3k5.mp4"
+  },
+   { 
+    id: 7, 
+    type: "reel", 
+    imageUrl: "https://picsum.photos/seed/spa-interior-1/720/1280",
+    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777711398/Download_2_ayviku.mp4"
+  },
+   { 
+    id: 8, 
+    type: "reel", 
+    imageUrl: "https://picsum.photos/seed/spa-interior-1/720/1280",
+    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777712207/Download_5_arjj8t.mp4"
+  }
+ ];
 
 export const TESTIMONIALS = [
   { name: "Sarah Jenkins", text: "The most peaceful experience I've had in years. The Aromatherapy session was transformative.", rating: 5 },
@@ -240,4 +280,20 @@ export const TESTIMONIALS = [
 
 export const BOOKING_TIMES = [
   "09:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00"
+];
+export const WHY_FEATURES = [
+  "Comprehensive Treatment Options",
+  "Exceptional Moroccan Bath Experience",
+  "Warm and Professional Staff",
+  "Affordable Luxury",
+  "High Standard of Cleanliness",
+  "Complementary Detox Drinks",
+  "Safe and Secure Parking"
+];
+
+export const STATS = [
+  { value: "3+", label: "Years Experience" },
+  { value: "24/7", label: "Open" },
+  { value: "20+", label: "Herbal Treatment" },
+  { value: "2", label: "Branches" }
 ];
