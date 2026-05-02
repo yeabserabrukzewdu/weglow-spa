@@ -10,6 +10,7 @@ import { Testimonials } from './components/sections/Testimonials';
 import { Booking } from './components/sections/Booking';
 import { Footer } from './components/layout/Footer';
 import { AdminDashboard } from './components/admin/AdminDashboard';
+import { FloatingContact } from './components/ui/FloatingContact';
 import { UserProfile, Appointment, AdminData } from './types';
 import { SERVICES } from './constants';
 
@@ -163,6 +164,8 @@ export default function App() {
             setView('admin');
           }
         }} />
+
+        <FloatingContact />
       </motion.div>
     </AnimatePresence>
   );

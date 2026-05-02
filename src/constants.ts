@@ -268,7 +268,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 8, 
     type: "reel", 
     imageUrl: "https://picsum.photos/seed/spa-interior-1/720/1280",
-    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777712207/Download_5_arjj8t.mp4"
+    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777716060/Download_8_e4qcwq.mp4"
   }
  ];
 

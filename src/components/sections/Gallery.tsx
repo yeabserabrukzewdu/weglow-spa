@@ -76,7 +76,7 @@ export const Gallery: React.FC = () => {
               {item.videoUrl ? (
                 <div className="w-full h-full relative">
                   <video 
-                    ref={(el) => (videoRefs.current[item.id] = el)}
+                    ref={(el) => { videoRefs.current[item.id] = el; }}
                     src={item.videoUrl} 
                     className={`w-full h-full object-cover transition-all duration-1000 ${playingId === item.id ? 'opacity-100 scale-105' : 'opacity-70 group-hover:opacity-100'}`}
                     loop 
