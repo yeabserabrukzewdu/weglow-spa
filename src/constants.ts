@@ -226,49 +226,49 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 1, 
     type: "reel", 
     imageUrl: "/a.webp",  // Update this path to match your file location
-    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777712207/Download_5_arjj8t.mp4"
+    videoUrl:"https://res.cloudinary.com/dlfdjcuat/video/upload/v1777711413/Download_3_r5bfol.mp4"
   },
    { 
     id: 2, 
     type: "reel", 
     imageUrl: "/b.webp",  // Update this path to match your file location
-    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777711380/Download_1_zsyef0.mp4"
+    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777711410/Download_ldq3k5.mp4"
   },
    { 
     id: 3, 
     type: "reel", 
     imageUrl: "/c.webp",  // Update this path to match your file location  
-    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777711413/Download_3_r5bfol.mp4"
+    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777711411/Download_7_vbts86.mp4"
   },
    { 
     id: 4, 
     type: "reel", 
     imageUrl: "/d.webp",  // Update this path to match your file location
-    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777711411/Download_7_vbts86.mp4"
+    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777712185/Download_6_dkflb6.mp4"
   },
    { 
     id: 5, 
     type: "reel", 
     imageUrl: "/e.webp",  // Update this path to match your file location
-    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777712185/Download_6_dkflb6.mp4"
+    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777716060/Download_8_e4qcwq.mp4"
   },
    { 
     id: 6, 
     type: "reel", 
     imageUrl: "/f.webp",  // Update this path to match your file location
-    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777711410/Download_ldq3k5.mp4"
+    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777711398/Download_2_ayviku.mp4"
   },
    { 
     id: 7, 
     type: "reel", 
     imageUrl: "/g.webp",  // Update this path to match your file location
-    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777711398/Download_2_ayviku.mp4"
+    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777711380/Download_1_zsyef0.mp4"
   },
    { 
     id: 8, 
     type: "reel", 
     imageUrl: "/h.webp",  // Update this path to match your file location
-    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777716060/Download_8_e4qcwq.mp4"
+    videoUrl: "https://res.cloudinary.com/dlfdjcuat/video/upload/v1777712207/Download_5_arjj8t.mp4"
   }
  ];
 

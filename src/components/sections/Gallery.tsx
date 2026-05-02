@@ -76,9 +76,9 @@ export const Gallery: React.FC = () => {
               {item.videoUrl ? (
                 <div className="w-full h-full relative">
                   <video 
-                    ref={(el) => { videoRefs.current[item.id] = el; }}
+                    ref={(el) => {videoRefs.current[item.id] = el;}}
                     src={item.videoUrl} 
-                    className={`w-full h-full object-cover transition-all duration-1000 ${playingId === item.id ? 'opacity-100 scale-105' : 'opacity-70 group-hover:opacity-100'}`}
+                    className={`w-full h-full object-cover transition-all duration-1000 ${playingId === item.id ? 'opacity-100 scale-105' : 'opacity-0'}`}
                     loop 
                     muted={false} // User probably wants sound if they play it manually
                     playsInline
@@ -86,8 +86,16 @@ export const Gallery: React.FC = () => {
                     onPause={() => playingId === item.id && setPlayingId(null)}
                   />
                   
+                  {/* Placeholder Image Overlay */}
+                  <img 
+                    src={item.imageUrl} 
+                    alt={item.type}
+                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${playingId === item.id ? 'opacity-0 pointer-events-none' : 'opacity-80 group-hover:opacity-100 group-hover:scale-105'}`}
+                    referrerPolicy="no-referrer"
+                  />
+                  
                   {/* Play/Pause Overlay */}
-                  <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${playingId === item.id ? 'bg-transparent' : 'bg-black/20 group-hover:bg-black/10'}`}>
+                  <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 z-10 ${playingId === item.id ? 'bg-transparent' : 'bg-black/20 group-hover:bg-black/10'}`}>
                     <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-500 shadow-xl">
                       {playingId === item.id ? (
                         <Pause className="w-6 h-6 text-white fill-white" />
