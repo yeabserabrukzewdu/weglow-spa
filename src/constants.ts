@@ -6,10 +6,10 @@ export const CONTACT_INFO = {
 };
 
 export const SOCIAL_LINKS = {
-  instagram: "https://instagram.com/weglow_spa",
-  tiktok: "https://tiktok.com/@weglow_spa",
+  instagram: "https://www.instagram.com/we_glow_wellness_spa/",
+  tiktok: "https://www.tiktok.com/@weglow01",
   facebook: "https://facebook.com/weglow_spa",
-  telegram: "https://t.me/weglow_spa",
+  telegram: "https://web.telegram.org/k/#8254092344",
 };
 
 export interface Service {
