@@ -22,6 +22,9 @@ export const Footer: React.FC<FooterProps> = ({ onAdminClick }) => {
           <p className="text-[10px] text-black/30 uppercase tracking-widest font-bold mt-4">
             © {new Date().getFullYear()} WE GLOW WELLNESS SPA. All rights reserved.
           </p>
+          <p className="text-[9px] text-black/20 uppercase tracking-widest font-bold mt-1">
+            Developed by <a href="https://semaysystems.com" target="_blank" rel="noopener noreferrer" className="hover:text-black/40 transition-colors cursor-pointer">Semay Systems</a>
+          </p>
         </div>
         
         <div className="flex gap-8 items-center">

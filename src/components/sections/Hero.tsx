@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, MotionValue } from 'motion/react';
+import { motion, MotionValue, useTransform } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 
 interface HeroProps {
@@ -9,72 +9,71 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ heroOpacity, heroScale, scrollToBooking }) => {
+  // Use scroll position for some subtle parallax or additional effects if needed
+  // heroOpacity and heroScale are passed from App.tsx
+
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center overflow-hidden bg-[#141414]">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=2070" 
+          alt="Spa Serenity"
+          className="w-full h-full object-cover opacity-60 scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+      </div>
+
       <motion.div 
         style={{ opacity: heroOpacity, scale: heroScale }}
-        className="relative z-10 text-center px-6"
+        className="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-12"
       >
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="text-[12px] uppercase tracking-[0.3em] text-black/40 mb-6 font-bold"
-        >
-          A Sanctuary for the Soul
-        </motion.p>
-        <motion.h2 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-          className="text-7xl md:text-9xl font-serif italic leading-tight mb-10"
-        >
-          Find Your <br /> Inner Calm
-        </motion.h2>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-        >
-          <button 
-            onClick={scrollToBooking}
-            className="group flex items-center gap-4 mx-auto bg-white border border-black/10 px-10 py-5 rounded-full text-sm font-semibold hover:bg-[#141414] hover:text-white transition-all duration-500 shadow-xl shadow-black/5"
+        <div className="max-w-2xl">
+          <motion.h2 
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            className="text-white text-6xl md:text-8xl font-serif mb-8 leading-[1.1]"
           >
-            Begin Your Journey
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
-        </motion.div>
+            Redefine <br />
+            <span className="italic font-light">Relaxation</span>
+          </motion.h2>
+
+          <motion.p 
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+            className="text-white/60 text-lg md:text-xl max-w-lg mb-12 leading-relaxed"
+          >
+            Escape the noise and rediscover your inner peace in our sanctuary. 
+            Tailored treatments designed to harmonize your body, mind, and spirit.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+          >
+            <button 
+              onClick={scrollToBooking}
+              className="group bg-[#E8D9C5] text-[#141414] px-12 py-5 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-white transition-all duration-500 shadow-2xl flex items-center gap-3"
+            >
+              Begin Your Journey
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </motion.div>
+        </div>
       </motion.div>
-      
-      {/* Atmospheric Background Elements */}
-      <div className="absolute inset-0 z-0">
-        <motion.div 
-          animate={{ 
-            x: [0, 50, -20, 0],
-            y: [0, -30, 40, 0],
-            scale: [1, 1.1, 0.9, 1],
-          }}
-          transition={{ 
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#5A5A40]/5 rounded-full blur-[100px]" 
-        />
-        <motion.div 
-          animate={{ 
-            x: [0, -60, 30, 0],
-            y: [0, 40, -20, 0],
-            scale: [1, 0.9, 1.1, 1],
-          }}
-          transition={{ 
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#8E9299]/5 rounded-full blur-[120px]" 
-        />
-      </div>
+
+      {/* Decorative Blur Element */}
+      <motion.div 
+        animate={{ 
+          opacity: [0.2, 0.4, 0.2],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{ duration: 8, repeat: Infinity }}
+        className="absolute bottom-20 left-20 w-96 h-96 bg-[#E8D9C5]/10 rounded-full blur-[120px] pointer-events-none"
+      />
     </section>
   );
 };
