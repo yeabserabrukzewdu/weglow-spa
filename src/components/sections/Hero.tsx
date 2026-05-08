@@ -9,18 +9,30 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ heroOpacity, heroScale, scrollToBooking }) => {
-  // Use scroll position for some subtle parallax or additional effects if needed
-  // heroOpacity and heroScale are passed from App.tsx
+  const [videoLoaded, setVideoLoaded] = React.useState(false);
 
   return (
     <section className="relative h-screen flex items-center overflow-hidden bg-[#141414]">
-      {/* Background Image with Overlay */}
+      {/* Background Media Container */}
       <div className="absolute inset-0 z-0">
+        {/* Placeholder Image */}
         <img 
           src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=2070" 
           alt="Spa Serenity"
-          className="w-full h-full object-cover opacity-60 scale-105"
+          className={`w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? 'opacity-0' : 'opacity-60'} scale-105`}
         />
+        
+        {/* Hero Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          onCanPlayThrough={() => setVideoLoaded(true)}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? 'opacity-40' : 'opacity-0'} scale-105`}
+          src="https://res.cloudinary.com/dlfdjcuat/video/upload/v1778273044/weglowweb_i7m53i.mp4"
+        />
+
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
       </div>
 
