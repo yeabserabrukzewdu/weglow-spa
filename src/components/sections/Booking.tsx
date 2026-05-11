@@ -20,7 +20,7 @@ interface BookingProps {
 
 export const Booking: React.FC<BookingProps> = ({ bookingRef, bookingData, setBookingData, onSubmit, loading }) => {
   return (
-    <section ref={bookingRef} id="booking" className="py-32 px-8 bg-white">
+    <section ref={bookingRef} id="booking" className="py-32 px-8">
       <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
         <div>
           <h3 className="text-[10px] uppercase tracking-[0.4em] text-black/30 font-bold mb-4">Reservation</h3>

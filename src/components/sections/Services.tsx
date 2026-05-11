@@ -12,7 +12,7 @@ export const Services: React.FC<ServicesProps> = ({ onReserve }) => {
   const categories = ["Massages", "Moroccan Baths", "Nails & Care"];
 
   return (
-    <section id="services" className="py-32 px-4 md:px-8 bg-white overflow-hidden">
+    <section id="services" className="py-32 px-4 md:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="max-w-2xl">

@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-32 px-8 bg-[#F5F5F0]">
+    <section id="about" className="py-32 px-8">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
@@ -14,7 +14,7 @@ export const About: React.FC = () => {
         >
           <div className="aspect-square bg-[#5A5A40] rounded-[60px] overflow-hidden rotate-3">
             <img 
-              src="./about.webp"  // Update this path to match your file location
+              src="/about.webp" 
               alt="Spa Interior"
               className="w-full h-full object-cover opacity-60 -rotate-3 scale-110"
               referrerPolicy="no-referrer"
@@ -38,9 +38,9 @@ export const About: React.FC = () => {
           transition={{ duration: 0.8 }}
         >
           <h3 className="text-[10px] uppercase tracking-[0.4em] text-black/30 font-bold mb-4">The Philosophy</h3>
-          <h2 className="text-5xl font-serif italic mb-8 leading-tight">Where Nature Meets <br /> Modern Recovery</h2>
+          <h2 className="text-5xl font-serif italic mb-8 leading-tight">Ethiopia's Premier <br /> Wellness Sanctuary</h2>
           <p className="text-lg text-black/60 leading-relaxed mb-10 font-light">
-            WE GLOW was founded on the principle that true wellness is a balance between the physical and the spiritual. We combine ancient healing techniques with modern comfort to create a sanctuary where you can disconnect from the noise and reconnect with yourself.
+            WE GLOW WELLNESS SPA in Addis Ababa was founded on the principle that true wellness is a balance between the physical and the spiritual. As the best spa in Ethiopia, we combine ancient healing techniques with modern comfort to create a sanctuary where you can disconnect from the noise and reconnect with yourself.
           </p>
           <div className="grid grid-cols-2 gap-10">
             <motion.div

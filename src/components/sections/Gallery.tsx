@@ -26,7 +26,7 @@ export const Gallery: React.FC = () => {
   };
 
   return (
-    <section id="gallery" className="py-32 px-4 md:px-8 bg-white">
+    <section id="gallery" className="py-32 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div>
@@ -76,7 +76,7 @@ export const Gallery: React.FC = () => {
               {item.videoUrl ? (
                 <div className="w-full h-full relative">
                   <video 
-                    ref={(el) => {videoRefs.current[item.id] = el;}}
+                    ref={(el) => (videoRefs.current[item.id] = el)}
                     src={item.videoUrl} 
                     className={`w-full h-full object-cover transition-all duration-1000 ${playingId === item.id ? 'opacity-100 scale-105' : 'opacity-0'}`}
                     loop 

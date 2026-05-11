@@ -9,7 +9,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onAdminClick }) => {
   return (
-    <footer className="bg-white py-20 px-8 border-t border-black/5">
+    <footer className="py-20 px-8 border-t border-black/5">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
         <div className="flex flex-col gap-2">
           <h2 className="text-3xl font-serif italic mb-2 uppercase">WE GLOW</h2>

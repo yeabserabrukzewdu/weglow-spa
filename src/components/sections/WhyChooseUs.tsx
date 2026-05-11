@@ -63,7 +63,7 @@ export const WhyChooseUs: React.FC = () => {
       </div>
 
       {/* Stats Section */}
-      <div className="bg-white py-20 px-8 border-b border-black/5">
+      <div className="py-20 px-8 border-b border-black/5">
         <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {STATS.map((stat, i) => (
             <motion.div

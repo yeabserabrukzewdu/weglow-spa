@@ -41,15 +41,15 @@ export const Hero: React.FC<HeroProps> = ({ heroOpacity, heroScale, scrollToBook
         className="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-12"
       >
         <div className="max-w-2xl">
-          <motion.h2 
+          <motion.h1 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-white text-6xl md:text-8xl font-serif mb-8 leading-[1.1]"
           >
-            Redefine <br />
-            <span className="italic font-light">Relaxation</span>
-          </motion.h2>
+            Best Spa in <br />
+            <span className="italic font-light">Ethiopia</span>
+          </motion.h1>
 
           <motion.p 
             initial={{ opacity: 0, x: -30 }}
@@ -57,8 +57,8 @@ export const Hero: React.FC<HeroProps> = ({ heroOpacity, heroScale, scrollToBook
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
             className="text-white/60 text-lg md:text-xl max-w-lg mb-12 leading-relaxed"
           >
-            Escape the noise and rediscover your inner peace in our sanctuary. 
-            Tailored treatments designed to harmonize your body, mind, and spirit.
+            Experience world-class wellness at WE GLOW WELLNESS SPA in Bole, Addis Ababa. 
+            Rediscover your inner peace with our tailored luxury treatments.
           </motion.p>
 
           <motion.div
